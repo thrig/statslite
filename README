@@ -6,13 +6,19 @@ install for ASDF, e.g.
   cd "$HOME"/.local/share/common-lisp/source
   git clone ...
 
-another way would be to symlink this directory into
-~/quicklisp/local-projects then use Quicklisp instead of ASDF
+or instead install for Quicklisp, e.g.
+
+  git clone ...
+  cd ~/quicklisp/local-projects
+  ln -s ...
 
 example use with ASDF might look something like
 
+  ; or instead with quicklisp
+  ;(ql:quickload :statslite)
   (require :asdf)
   (asdf:load-system :statslite)
+
   (defpackage :foo
     (:use :cl :statslite))
   (in-package :foo)
