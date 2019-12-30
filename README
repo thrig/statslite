@@ -7,10 +7,12 @@ install for ASDF, e.g.
   git clone ...
 
 another way would be to symlink this directory into
-~/quicklisp/local-projects then use Quicklisp instead of ASDF directly
+~/quicklisp/local-projects then use Quicklisp instead of ASDF
 
-example use might look something like
+example use with ASDF might look something like
 
+  (require :asdf)
+  (asdf:load-system :statslite)
   (defpackage :foo
     (:use :cl :statslite))
   (in-package :foo)
