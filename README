@@ -4,13 +4,13 @@ install for ASDF, e.g.
 
   mkdir -p "$HOME"/.local/share/common-lisp/source
   cd "$HOME"/.local/share/common-lisp/source
-  git clone ...
+  git clone https://github.com/thrig/statslite
 
 or instead install for Quicklisp, e.g.
 
-  git clone ...
+  git clone https://github.com/thrig/statslite
   cd ~/quicklisp/local-projects
-  ln -s ...
+  ln -s .../path/to/statslite
 
 example use with ASDF might look something like
 
@@ -19,8 +19,9 @@ example use with ASDF might look something like
   (require :asdf)
   (asdf:load-system :statslite)
 
-  (defpackage :foo
-    (:use :cl :statslite))
+  (defpackage #:foo
+    (:use #:cl)
+    (:import-from #:statslite #:statslite #:statsmore))
   (in-package :foo)
 
   (statslite '(0 0 1 2 63 61 27 13))
@@ -31,4 +32,5 @@ which might produce for the last two statements
   #<STATSLITE 8 [0.00 63.00] mean 20.88 range 63.00 sd 27.01>
   #<STATSMORE 8 [0.00 0.50 7.50 44.00 63.00] mean 20.88 range 63.00 sd 27.01>
 
-where STATSMORE also includes the five number summary of the data
+where STATSMORE includes the five number summary instead of just the
+min and max
