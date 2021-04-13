@@ -2,6 +2,8 @@
 eval 'exec sbcl --script "$0" ${1+"$@"}'
 |#
 
+; cargo culted from "testscr.ros" under cl-ansi-text-20200218-git
+
 #-quicklisp
 (let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
                                        (user-homedir-pathname))))
@@ -16,4 +18,4 @@ eval 'exec sbcl --script "$0" ${1+"$@"}'
           (ql:quickload :statslite/test :silent t)
           (5am:run! :statslite-suite))
         (serious-condition (c) (describe c) (uiop:quit 2)))
-    0 1)))
+    0 1))

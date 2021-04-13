@@ -33,3 +33,15 @@ which might produce something like
   #<STATSMORE 8 [0.00 0.50 7.50 44.00 63.00] mean 20.88 range 63.00 sd 27.01>
 
 which mostly suffices for my statistical needs
+
+
+tests can perhaps be run via something like
+
+  (ql:quickload :statslite)
+  (asdf:test-system :statslite)
+
+or via
+
+  make test
+
+assumming SBCL and Quicklisp are available
