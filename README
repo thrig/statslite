@@ -27,10 +27,9 @@ example use with ASDF might look something like
   (statslite '(0 0 1 2 63 61 27 13))
   (statsmore '(0 0 1 2 63 61 27 13))
 
-which might produce for the last two statements
+which might produce something like
 
   #<STATSLITE 8 [0.00 63.00] mean 20.88 range 63.00 sd 27.01>
   #<STATSMORE 8 [0.00 0.50 7.50 44.00 63.00] mean 20.88 range 63.00 sd 27.01>
 
-where STATSMORE includes the five number summary instead of just the
-min and max
+which mostly suffices for my statistical needs
